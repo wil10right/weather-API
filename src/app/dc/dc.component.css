@@ -22,15 +22,20 @@ div.foreground{
 
 .lrg{
     font-size: 8vw;
+    font-weight: 100;
     line-height: -10px;
+    text-shadow: rgb(255, 245, 155, 0.535) 0px 0px 3px;
 }
 
 .xl{
     font-size: 13vw;
     line-height: -10px;
     font-weight: bolder;
+    text-shadow: rgba(255, 245, 155, 0.535) 0px 0px 6px;
 }
 
 .med{
+    font-weight: bold;
     font-size: 14pt;
+    text-shadow: rgb(255, 245, 155, 0.535) 0px 0px 2px;
 }

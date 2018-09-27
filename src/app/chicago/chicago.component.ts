@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../http.service';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-chicago',
@@ -15,9 +16,11 @@ export class ChicagoComponent implements OnInit {
   tempLo: Number;
   meterspersecond: any;
   calculated: Number;
-  constructor(private _http: HttpService) { }
+  
+  constructor(private _http: HttpService, private _parent: AppComponent) { }
 
   ngOnInit() {
+    this._parent.homeBgOn = false;
     let obs = this._http.getCityWeather(this.cityId);
     obs.subscribe(data=>{
       console.log(data);

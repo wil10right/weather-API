@@ -1,4 +1,8 @@
+<div class="background" *ngIf="homeBgOn">
+</div>
+
 <div class="button-block">
+    <a [routerLink]="['/']" (click)="homeBgFlip()"><img id="vane" src="assets/images/wind-vane-icon.png" alt="weather-vane-logo"></a>
     <button [routerLink]="['/seattle']">Seattle</button>
     <button [routerLink]="['/sanjose']">San Jose</button>
     <button [routerLink]="['/burbank']">Burbank</button>
@@ -9,5 +13,15 @@
 </div>
 
 <div class="weather-data">
+
+    <div class="welcome" *ngIf="homeBgOn">
+        <h1>WeatherVane</h1>
+        <br>
+        <h4>Click on a city to view current weather data.</h4>
+        <br>
+        <h4>More locations coming soon!</h4>
+
+    </div>
+
     <router-outlet></router-outlet>
 </div>
