@@ -9,6 +9,7 @@ import { BurbankComponent } from './burbank/burbank.component';
 import { DallasComponent } from './dallas/dallas.component';
 import { DcComponent } from './dc/dc.component';
 import { ChicagoComponent } from './chicago/chicago.component';
+import { VegasComponent } from './vegas/vegas.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { HttpService } from './http.service';
@@ -21,7 +22,8 @@ import { HttpService } from './http.service';
     BurbankComponent,
     DallasComponent,
     DcComponent,
-    ChicagoComponent
+    ChicagoComponent,
+    VegasComponent
   ],
   imports: [
     BrowserModule,

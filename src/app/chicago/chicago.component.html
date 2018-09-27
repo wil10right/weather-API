@@ -1,9 +1,14 @@
-<style>
-    img{
-      width:200px;
-    }
-  </style>
-  <h1>Chicago, IL</h1>
-  <img src="http://thunderstruckdance.com/wp-content/uploads/2015/08/chicago-Depositphotos_11011615-960p.jpg">
-  <br>
-  {{ cityJson | json }}   
+<div class="background"></div>
+
+<div class="foreground">
+    <p class="lrg">{{ cityJson.name }}, IL</p>
+    <p class="xl">{{ tempF }}° F</p>
+    <p class="lrg">{{ cityJson.weather[0].main }}</p>
+    <p class="med">High: {{ tempHi }}° F | Low: {{tempLo}}° F</p>
+    <p class="med">Humidity: {{ cityJson.main.humidity }}%</p>
+    <p class="med">Condition: {{ cityJson.weather[0].description }}</p>
+    <p class="med">Cloud Coverage: {{ cityJson.clouds.all }}%</p>
+    <p class="med">Wind Speed:  {{ calculated }} mph</p>
+
+</div>
+

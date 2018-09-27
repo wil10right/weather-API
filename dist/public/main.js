@@ -87,7 +87,7 @@ var AppRoutingModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = "button{\n    margin: 5px;\n    padding: 5px;\n    width: 100px;\n    display: block;\n    outline: 1px solid red;\n}\n\n.button-block{\n    margin: auto;\n    display: inline;\n    outline: 1px solid red;\n    position: fixed;\n    top: 10px;\n    left: 10px;\n}\n\n.weather-data{\n    display: inline;\n    outline: 1px solid red;\n}\n\nh1{\n    margin:20px;\n}\n\ndiv.foreground{\n    z-index: 1;\n    position: fixed;\n    top: 10px;\n    left: 150px;\n}\n\n.lrg{\n    font-size: 8vw;\n    line-height: -10px;\n}\n\n.xl{\n    font-size: 13vw;\n    line-height: -10px;\n    font-weight: bolder;\n}\n\n.med{\n    font-size: 14pt;\n}"
 
 /***/ }),
 
@@ -98,7 +98,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!--The content below is only a placeholder and can be replaced.-->\n<div style=\"text-align:center\">\n  <h1>\n    Welcome to {{ title }}!\n  </h1>\n  <img width=\"300\" alt=\"Angular Logo\" src=\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==\">\n</div>\n<h2>Here are some links to help you start: </h2>\n<ul>\n  <li>\n    <h2><a target=\"_blank\" rel=\"noopener\" href=\"https://angular.io/tutorial\">Tour of Heroes</a></h2>\n  </li>\n  <li>\n    <h2><a target=\"_blank\" rel=\"noopener\" href=\"https://github.com/angular/angular-cli/wiki\">CLI Documentation</a></h2>\n  </li>\n  <li>\n    <h2><a target=\"_blank\" rel=\"noopener\" href=\"https://blog.angular.io/\">Angular blog</a></h2>\n  </li>\n</ul>\n\n<router-outlet></router-outlet>\n"
+module.exports = "<div class=\"button-block\">\n    <button [routerLink]=\"['/seattle']\">Seattle</button>\n    <button [routerLink]=\"['/sanjose']\">San Jose</button>\n    <button [routerLink]=\"['/burbank']\">Burbank</button>\n    <button [routerLink]=\"['/dallas']\">Dallas</button>\n    <button [routerLink]=\"['/dc']\">Washington, DC</button>\n    <button [routerLink]=\"['/chicago']\">Chicago</button>\n</div>\n\n<div class=\"weather-data\">\n    <router-outlet></router-outlet>\n</div>\n"
 
 /***/ }),
 
@@ -215,7 +215,7 @@ var AppModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = "div.background{\n    background-image: url(\"https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Burbank_media_district_from_Griffith_Park_2015-11-07.jpg/1200px-Burbank_media_district_from_Griffith_Park_2015-11-07.jpg\");\n    opacity: 0.5;\n    top: 0;\n    right: 0;\n    left: 0;\n    bottom: 0;\n    position: fixed;\n    z-index: -1;\n    background-repeat: no-repeat;\n    background-attachment: fixed;\n    background-size: cover;\n    background-position: center;\n}\n\ndiv.foreground{\n    z-index: 1;\n}\n\n.lrg{\n    font-size: 8vw;\n    line-height: -10px;\n}\n\n.xl{\n    font-size: 13vw;\n    line-height: -10px;\n    font-weight: bolder;\n}\n\n.med{\n    font-size: 14pt;\n}"
 
 /***/ }),
 
@@ -226,7 +226,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  burbank works!\n</p>\n"
+module.exports = "<div class=\"background\"></div>\n\n<div class=\"foreground\">\n    <p class=\"lrg\">{{ cityJson.name }}, CA</p>\n    <p class=\"xl\">{{ tempF }}° F</p>\n    <p class=\"lrg\">{{ cityJson.weather[0].main }}</p>\n    <p class=\"med\">High: {{ tempHi }}° F | Low: {{tempLo}}° F</p>\n    <p class=\"med\">Humidity: {{ cityJson.main.humidity }}%</p>\n    <p class=\"med\">Condition: {{ cityJson.weather[0].description }}</p>\n    <p class=\"med\">Cloud Coverage: {{ cityJson.clouds.all }}%</p>\n    <p class=\"med\">Wind Speed:  {{ calculated }} mph</p>\n\n</div>\n\n"
 
 /***/ }),
 
@@ -241,6 +241,7 @@ module.exports = "<p>\n  burbank works!\n</p>\n"
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BurbankComponent", function() { return BurbankComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _http_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../http.service */ "./src/app/http.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -251,18 +252,36 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var BurbankComponent = /** @class */ (function () {
-    function BurbankComponent() {
+    function BurbankComponent(_http) {
+        this._http = _http;
+        this.cityId = 'burbank';
     }
     BurbankComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        var obs = this._http.getCityWeather(this.cityId);
+        obs.subscribe(function (data) {
+            console.log(data);
+            _this.cityJson = data;
+            console.log(_this.cityJson.main.temp);
+            _this.tempF = Math.trunc(((_this.cityJson.main.temp - 273.15) * 1.8) + 32);
+            _this.tempC = Math.trunc(_this.cityJson.main.temp - 273.15);
+            _this.tempHi = Math.trunc(((_this.cityJson.main.temp_max - 273.15) * 1.8) + 32);
+            _this.tempLo = Math.trunc(((_this.cityJson.main.temp_min - 273.15) * 1.8) + 32);
+            _this.meterspersecond = _this.cityJson.wind.speed;
+            _this.calculated = Math.round(_this.meterspersecond * 3600 / 1610.3 * 10) / 10;
+            console.log(_this.tempF);
+        });
     };
+    ;
     BurbankComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-burbank',
             template: __webpack_require__(/*! ./burbank.component.html */ "./src/app/burbank/burbank.component.html"),
             styles: [__webpack_require__(/*! ./burbank.component.css */ "./src/app/burbank/burbank.component.css")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [_http_service__WEBPACK_IMPORTED_MODULE_1__["HttpService"]])
     ], BurbankComponent);
     return BurbankComponent;
 }());
@@ -289,7 +308,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  chicago works!\n</p>\n"
+module.exports = "  <h1>Chicago, IL</h1>\n  <img src=\"http://thunderstruckdance.com/wp-content/uploads/2015/08/chicago-Depositphotos_11011615-960p.jpg\">\n  <br>\n  {{ cityJson | json }}   "
 
 /***/ }),
 
@@ -304,6 +323,7 @@ module.exports = "<p>\n  chicago works!\n</p>\n"
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ChicagoComponent", function() { return ChicagoComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _http_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../http.service */ "./src/app/http.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -314,18 +334,28 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var ChicagoComponent = /** @class */ (function () {
-    function ChicagoComponent() {
+    function ChicagoComponent(_http) {
+        this._http = _http;
+        this.cityId = 'chicago';
     }
     ChicagoComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        var obs = this._http.getCityWeather(this.cityId);
+        obs.subscribe(function (data) {
+            console.log(data);
+            _this.cityJson = data;
+        });
     };
+    ;
     ChicagoComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-chicago',
             template: __webpack_require__(/*! ./chicago.component.html */ "./src/app/chicago/chicago.component.html"),
             styles: [__webpack_require__(/*! ./chicago.component.css */ "./src/app/chicago/chicago.component.css")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [_http_service__WEBPACK_IMPORTED_MODULE_1__["HttpService"]])
     ], ChicagoComponent);
     return ChicagoComponent;
 }());
@@ -352,7 +382,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  dallas works!\n</p>\n"
+module.exports = "  <h1>Dallas, TX</h1>\n  <img src=\"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtRHCYD1DWeQv4BdDq9Hqnyjh8hSg6-e23Oy0lcB9w749ROd8i\">\n  <br>\n  {{ cityJson | json }}"
 
 /***/ }),
 
@@ -367,6 +397,7 @@ module.exports = "<p>\n  dallas works!\n</p>\n"
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DallasComponent", function() { return DallasComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _http_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../http.service */ "./src/app/http.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -377,18 +408,28 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var DallasComponent = /** @class */ (function () {
-    function DallasComponent() {
+    function DallasComponent(_http) {
+        this._http = _http;
+        this.cityId = 'dallas';
     }
     DallasComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        var obs = this._http.getCityWeather(this.cityId);
+        obs.subscribe(function (data) {
+            console.log(data);
+            _this.cityJson = data;
+        });
     };
+    ;
     DallasComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-dallas',
             template: __webpack_require__(/*! ./dallas.component.html */ "./src/app/dallas/dallas.component.html"),
             styles: [__webpack_require__(/*! ./dallas.component.css */ "./src/app/dallas/dallas.component.css")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [_http_service__WEBPACK_IMPORTED_MODULE_1__["HttpService"]])
     ], DallasComponent);
     return DallasComponent;
 }());
@@ -415,7 +456,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  dc works!\n</p>\n"
+module.exports = "  <h1>Washington, DC</h1>\n  <img src=\"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOsZIFkiKLMH1iyRLETCq4HLhiDyCyas3sObXBjlVon0IsV-ssug\">\n  <br>\n  {{ cityJson | json }}"
 
 /***/ }),
 
@@ -430,6 +471,7 @@ module.exports = "<p>\n  dc works!\n</p>\n"
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DcComponent", function() { return DcComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _http_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../http.service */ "./src/app/http.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -440,18 +482,28 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var DcComponent = /** @class */ (function () {
-    function DcComponent() {
+    function DcComponent(_http) {
+        this._http = _http;
+        this.cityId = 'washington';
     }
     DcComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        var obs = this._http.getCityWeather(this.cityId);
+        obs.subscribe(function (data) {
+            console.log(data);
+            _this.cityJson = data;
+        });
     };
+    ;
     DcComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-dc',
             template: __webpack_require__(/*! ./dc.component.html */ "./src/app/dc/dc.component.html"),
             styles: [__webpack_require__(/*! ./dc.component.css */ "./src/app/dc/dc.component.css")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [_http_service__WEBPACK_IMPORTED_MODULE_1__["HttpService"]])
     ], DcComponent);
     return DcComponent;
 }());
@@ -486,7 +538,12 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 var HttpService = /** @class */ (function () {
     function HttpService(_http) {
         this._http = _http;
+        this.url = 'http://api.openweathermap.org/data/2.5/weather?q=';
+        this.api = ',us&&appid=1257ca04186493c1b0edc5d7ce94acbf';
     }
+    HttpService.prototype.getCityWeather = function (id) {
+        return this._http.get(this.url + id + this.api);
+    };
     HttpService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
             providedIn: 'root'
@@ -518,7 +575,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  sanjose works!\n</p>\n"
+module.exports = "  <h1>San Jose, CA</h1>\n  <img src=\"https://i.ytimg.com/vi/car6ehhepxw/maxresdefault.jpg\">\n  <br>\n  {{ cityJson | json }}"
 
 /***/ }),
 
@@ -533,6 +590,7 @@ module.exports = "<p>\n  sanjose works!\n</p>\n"
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SanjoseComponent", function() { return SanjoseComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _http_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../http.service */ "./src/app/http.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -543,18 +601,28 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var SanjoseComponent = /** @class */ (function () {
-    function SanjoseComponent() {
+    function SanjoseComponent(_http) {
+        this._http = _http;
+        this.cityId = 'san jose';
     }
     SanjoseComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        var obs = this._http.getCityWeather(this.cityId);
+        obs.subscribe(function (data) {
+            console.log(data);
+            _this.cityJson = data;
+        });
     };
+    ;
     SanjoseComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-sanjose',
             template: __webpack_require__(/*! ./sanjose.component.html */ "./src/app/sanjose/sanjose.component.html"),
             styles: [__webpack_require__(/*! ./sanjose.component.css */ "./src/app/sanjose/sanjose.component.css")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [_http_service__WEBPACK_IMPORTED_MODULE_1__["HttpService"]])
     ], SanjoseComponent);
     return SanjoseComponent;
 }());
@@ -570,7 +638,7 @@ var SanjoseComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = "div.background{\n    background-image: url(\"https://www.bekinsmovingandstorage.com/wp-content/uploads/2016/03/SeattleCity2-1024x682.jpg\");\n    opacity: 0.5;\n    top: 0;\n    right: 0;\n    left: 0;\n    bottom: 0;\n    position: fixed;\n    z-index: -1;\n    background-repeat: no-repeat;\n    background-attachment: fixed;\n    background-size: cover;\n    background-position: center;\n}\n\n/* div.foreground{\n    z-index: 1;\n    position: fixed;\n    top: 10px;\n    left: 150px;\n}\n\n.lrg{\n    font-size: 8vw;\n    line-height: -10px;\n}\n\n.xl{\n    font-size: 13vw;\n    line-height: -10px;\n    font-weight: bolder;\n}\n\n.med{\n    font-size: 14pt;\n} */"
 
 /***/ }),
 
@@ -581,7 +649,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  seattle works!\n</p>\n"
+module.exports = "<div class=\"background\"></div>\n\n<div class=\"foreground\">\n    <p class=\"lrg\">{{ cityJson.name }}, WA</p>\n    <p class=\"xl\">{{ tempF }}° F</p>\n    <p class=\"lrg\">{{ cityJson.weather[0].main }}</p>\n    <p class=\"med\">High: {{ tempHi }}° F | Low: {{tempLo}}° F</p>\n    <p class=\"med\">Humidity: {{ cityJson.main.humidity }}%</p>\n    <p class=\"med\">Condition: {{ cityJson.weather[0].description }}</p>\n    <p class=\"med\">Cloud Coverage: {{ cityJson.clouds.all }}%</p>\n    <p class=\"med\">Wind Speed:  {{ calculated }} mph</p>\n\n</div>\n\n"
 
 /***/ }),
 
@@ -596,6 +664,7 @@ module.exports = "<p>\n  seattle works!\n</p>\n"
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SeattleComponent", function() { return SeattleComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _http_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../http.service */ "./src/app/http.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -606,18 +675,36 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var SeattleComponent = /** @class */ (function () {
-    function SeattleComponent() {
+    function SeattleComponent(_http) {
+        this._http = _http;
+        this.cityId = 'seattle';
     }
     SeattleComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        var obs = this._http.getCityWeather(this.cityId);
+        obs.subscribe(function (data) {
+            console.log(data);
+            _this.cityJson = data;
+            console.log(_this.cityJson.main.temp);
+            _this.tempF = Math.trunc(((_this.cityJson.main.temp - 273.15) * 1.8) + 32);
+            _this.tempC = Math.trunc(_this.cityJson.main.temp - 273.15);
+            _this.tempHi = Math.trunc(((_this.cityJson.main.temp_max - 273.15) * 1.8) + 32);
+            _this.tempLo = Math.trunc(((_this.cityJson.main.temp_min - 273.15) * 1.8) + 32);
+            _this.meterspersecond = _this.cityJson.wind.speed;
+            _this.calculated = Math.round(_this.meterspersecond * 3600 / 1610.3 * 10) / 10;
+            console.log(_this.tempF);
+        });
     };
+    ;
     SeattleComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-seattle',
             template: __webpack_require__(/*! ./seattle.component.html */ "./src/app/seattle/seattle.component.html"),
             styles: [__webpack_require__(/*! ./seattle.component.css */ "./src/app/seattle/seattle.component.css")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [_http_service__WEBPACK_IMPORTED_MODULE_1__["HttpService"]])
     ], SeattleComponent);
     return SeattleComponent;
 }());
@@ -686,7 +773,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/williamenright/Documents/CodingDojo/MEAN/Angular/weather_proj/public/src/main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! /Users/williamenright/Documents/MEAN/Angular/weather-API/src/main.ts */"./src/main.ts");
 
 
 /***/ })

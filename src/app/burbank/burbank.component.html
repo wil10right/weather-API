@@ -1,9 +1,14 @@
-<style>
-  img{
-    width:200px;
-  }
-</style>
-<h1>Burbank, CA</h1>
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Burbank_media_district_from_Griffith_Park_2015-11-07.jpg/1200px-Burbank_media_district_from_Griffith_Park_2015-11-07.jpg">
-<br>
-{{ cityJson | json }}
+<div class="background"></div>
+
+<div class="foreground">
+    <p class="lrg">{{ cityJson.name }}, CA</p>
+    <p class="xl">{{ tempF }}° F</p>
+    <p class="lrg">{{ cityJson.weather[0].main }}</p>
+    <p class="med">High: {{ tempHi }}° F | Low: {{tempLo}}° F</p>
+    <p class="med">Humidity: {{ cityJson.main.humidity }}%</p>
+    <p class="med">Condition: {{ cityJson.weather[0].description }}</p>
+    <p class="med">Cloud Coverage: {{ cityJson.clouds.all }}%</p>
+    <p class="med">Wind Speed:  {{ calculated }} mph</p>
+
+</div>
+

@@ -1,0 +1,36 @@
+div.background{
+    background-image: url("https://www.bekinsmovingandstorage.com/wp-content/uploads/2016/03/SeattleCity2-1024x682.jpg");
+    opacity: 0.5;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    position: fixed;
+    z-index: -1;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+div.foreground{
+    z-index: 1;
+    position: fixed;
+    top: 10px;
+    left: 150px;
+}
+
+.lrg{
+    font-size: 8vw;
+    line-height: -10px;
+}
+
+.xl{
+    font-size: 13vw;
+    line-height: -10px;
+    font-weight: bolder;
+}
+
+.med{
+    font-size: 14pt;
+}

@@ -2,12 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../http.service';
 
 @Component({
-  selector: 'app-seattle',
-  templateUrl: './seattle.component.html',
-  styleUrls: ['./seattle.component.css']
+  selector: 'app-vegas',
+  templateUrl: './vegas.component.html',
+  styleUrls: ['./vegas.component.css']
 })
-export class SeattleComponent implements OnInit {
-  cityId = 'seattle';
+
+export class VegasComponent implements OnInit {
+  cityId = 'las vegas';
   cityJson: any;
   tempF: Number;
   tempC: Number;

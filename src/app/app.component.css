@@ -1,0 +1,30 @@
+button{
+    margin: 5px;
+    padding: 5px;
+    width: 100px;
+    display: block;
+    font-weight: bold;
+    border-radius: 4px;
+    border: solid rgb(128, 128, 128) 1px;
+    background-image: radial-gradient(white,silver);
+    /* outline: 1px solid red; */
+}
+
+.button-block{
+    margin: auto;
+    display: inline;
+    /* outline: 1px solid red; */
+    position: fixed;
+    top: 10px;
+    left: 10px;
+}
+
+.weather-data{
+    display: inline;
+    /* outline: 1px solid red; */
+}
+
+h1{
+    margin:20px;
+}
+
