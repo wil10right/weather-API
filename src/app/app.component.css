@@ -50,12 +50,11 @@ button:hover{
     position: fixed;
     top: 10px;
     left: 150px;
-    width: 250px;
     text-align: center;
 }
 
 h1{
-    font-size: 24pt;
+    font-size: 15vw;
     margin-top: 25px;
     text-shadow: rgba(255, 245, 155, 0.535) 0px 0px 6px;
 }
@@ -74,6 +73,5 @@ h6{
 
 p{
     font-size:small;
-    justify-content: flex-start;
     text-align: left;
 }
