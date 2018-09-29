@@ -1,5 +1,6 @@
 div.background{
-    background-image: linear-gradient(skyblue,blue);
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLACKJj8JJcXRBNwNVswWaRZijtRnlRFwxktNRTFuErVkH0O0i");
+    opacity: 0.3;
     top: 0;
     right: 0;
     left: 0;
