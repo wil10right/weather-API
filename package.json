@@ -55,7 +55,7 @@
     "typescript": "~2.7.2"
   },
   "engines": {
-    "node": "",
-    "npm": ""
+    "node": "8.11.3",
+    "npm": "6.1.0"
   }
 }
