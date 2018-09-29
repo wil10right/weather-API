@@ -50,7 +50,7 @@ button:hover{
     position: fixed;
     top: 10px;
     left: 150px;
-    width: 200px;
+    width: 250px;
     text-align: center;
 }
 
@@ -66,3 +66,14 @@ h1{
     margin: auto;
 }
 
+h6{
+    position: fixed;
+    left: 10px;
+    bottom: 10px;
+}
+
+p{
+    font-size:small;
+    justify-content: flex-start;
+    text-align: left;
+}
